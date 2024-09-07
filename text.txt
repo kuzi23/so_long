@@ -1,0 +1,42 @@
+FUNCTION store_lines(game, file_descriptor):
+    INITIALIZE game.lines_total = 0
+    INITIALIZE game.lines = NULL  // Start with an empty array for lines
+    
+    WHILE (line = get_next_line(file_descriptor)) IS NOT NULL:
+        INCREMENT game.lines_total  // Increase the total number of lines
+        
+        REALLOCATE memory for game.lines to hold one more line
+        IF memory allocation fails:
+            PRINT error message
+            EXIT program
+        
+        STORE the current line in game.lines[game.lines_total - 1]
+    
+    // Optionally add a NULL terminator to the end of the array
+    REALLOCATE memory for game.lines to hold one more element
+    SET game.lines[game.lines_total] = NULL  // Add NULL to mark the end
+
+END FUNCTION
+
+FUNCTION main:
+    PARSE command-line arguments to get the input file
+    
+    OPEN the file
+    IF file fails to open:
+        PRINT error message
+        EXIT program
+    
+    CALL store_lines(game, file_descriptor)  // Read lines into the game struct
+    
+    CLOSE the file
+    
+    // Optionally: print all lines for debugging
+    FOR each line in game.lines:
+        PRINT the line
+        
+    // Free all allocated memory
+    FOR each line in game.lines:
+        FREE the line
+    FREE game.lines  // Free the entire lines array
+
+END FUNCTION
