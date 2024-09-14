@@ -6,7 +6,7 @@
 /*   By: mkwizera <mkwizera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 20:31:29 by mkwizera          #+#    #+#             */
-/*   Updated: 2024/09/07 19:44:46 by mkwizera         ###   ########.fr       */
+/*   Updated: 2024/09/14 19:30:50 by mkwizera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,10 +156,4 @@ int	main(int argc, char **argv)
 
 //     mlx = mlx_init();
 //     mlx_win = mlx_new_window(mlx, 1000, 1000, "Hello world");
-//     img.img =  mlx_new_image(mlx, 1000, 1000);
-//     img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, 
-//     &img.line_length, &img.endian);
-//     my_mlx_pixel_put(&img, 100, 100, 0x00FF0000);
-//     mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-//     mlx_loop(mlx);
-// }
+//     img.img =  mlx_new_image(mlx, 1000, 1000); start_game(game)
